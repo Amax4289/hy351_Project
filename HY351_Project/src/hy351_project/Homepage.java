@@ -16,7 +16,7 @@ public class Homepage extends javax.swing.JFrame {
      */
     public Homepage() {
         initComponents();
-         this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 
     /**
