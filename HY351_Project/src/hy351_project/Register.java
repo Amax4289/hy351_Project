@@ -9,14 +9,13 @@ package hy351_project;
  *
  * @author Amax
  */
-public class Homepage extends javax.swing.JFrame {
+public class Register extends javax.swing.JFrame {
 
     /**
-     * Creates new form Homepage
+     * Creates new form Register
      */
-    public Homepage() {
+    public Register() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,40 +28,27 @@ public class Homepage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButtonLogin = new javax.swing.JButton();
-        jButtonRegister = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabelRegister = new javax.swing.JLabel();
+        jButtonbackToHomepagefromRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1080, 480));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setText("HappyVax");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/mask.png"))); // NOI18N
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/mask.png"))); // NOI18N
+        jLabelRegister.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelRegister.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabelRegister.setForeground(new java.awt.Color(0, 0, 102));
+        jLabelRegister.setText("Register Page");
 
-        jButtonLogin.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButtonLogin.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonLogin.setText("Login");
-        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+        jButtonbackToHomepagefromRegister.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonbackToHomepagefromRegister.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonbackToHomepagefromRegister.setText("Back");
+        jButtonbackToHomepagefromRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLoginActionPerformed(evt);
-            }
-        });
-
-        jButtonRegister.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonRegister.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButtonRegister.setForeground(new java.awt.Color(51, 51, 51));
-        jButtonRegister.setText("Register");
-        jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRegisterActionPerformed(evt);
+                jButtonbackToHomepagefromRegisterActionPerformed(evt);
             }
         });
 
@@ -72,27 +58,24 @@ public class Homepage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonLogin)
-                    .addComponent(jLabel1)
-                    .addComponent(jButtonRegister))
-                .addContainerGap(598, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelRegister))
+                    .addComponent(jButtonbackToHomepagefromRegister))
+                .addContainerGap(510, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButtonLogin)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonRegister))
-                    .addComponent(jLabel3))
-                .addContainerGap(249, Short.MAX_VALUE))
+                    .addComponent(jLabelRegister)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addComponent(jButtonbackToHomepagefromRegister)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,13 +92,9 @@ public class Homepage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+    private void jButtonbackToHomepagefromRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbackToHomepagefromRegisterActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonLoginActionPerformed
-
-    private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRegisterActionPerformed
+    }//GEN-LAST:event_jButtonbackToHomepagefromRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,29 +113,28 @@ public class Homepage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Homepage().setVisible(true);
+                new Register().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonLogin;
-    private javax.swing.JButton jButtonRegister;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton jButtonbackToHomepagefromRegister;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabelRegister;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
