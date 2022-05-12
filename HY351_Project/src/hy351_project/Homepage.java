@@ -32,9 +32,6 @@ public class Homepage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
         jButtonRegister = new javax.swing.JButton();
-        jButtonBookAppointment = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButtonViewAppointment = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -49,7 +46,7 @@ public class Homepage extends javax.swing.JFrame {
         jLabel1.setText("HappyVax");
 
         jButtonLogin.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonLogin.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButtonLogin.setForeground(new java.awt.Color(0, 0, 0));
         jButtonLogin.setText("Login");
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -59,42 +56,12 @@ public class Homepage extends javax.swing.JFrame {
         });
 
         jButtonRegister.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonRegister.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonRegister.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButtonRegister.setForeground(new java.awt.Color(0, 0, 0));
         jButtonRegister.setText("Register");
         jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonRegisterActionPerformed(evt);
-            }
-        });
-
-        jButtonBookAppointment.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonBookAppointment.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButtonBookAppointment.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonBookAppointment.setText("Book an Appointment");
-        jButtonBookAppointment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonBookAppointmentActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("User Profile");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButtonViewAppointment.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonViewAppointment.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButtonViewAppointment.setForeground(new java.awt.Color(0, 0, 0));
-        jButtonViewAppointment.setText("View Appointment");
-        jButtonViewAppointment.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonViewAppointmentActionPerformed(evt);
             }
         });
 
@@ -109,56 +76,51 @@ public class Homepage extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonViewAppointment)
-                            .addComponent(jButtonBookAppointment)
-                            .addComponent(jLabel1)
-                            .addComponent(jButtonLogin)
-                            .addComponent(jButtonRegister)
-                            .addComponent(jButton1))
-                        .addGap(0, 238, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 21, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jButtonLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButtonRegister, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonLogin)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonRegister)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonBookAppointment)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonViewAppointment)
-                        .addGap(0, 116, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)))
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonLogin)
+                .addGap(32, 32, 32)
+                .addComponent(jButtonRegister)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel2)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
         );
 
         pack();
@@ -171,18 +133,6 @@ public class Homepage extends javax.swing.JFrame {
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRegisterActionPerformed
-
-    private void jButtonBookAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBookAppointmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonBookAppointmentActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButtonViewAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewAppointmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonViewAppointmentActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,11 +170,8 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonBookAppointment;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JButton jButtonRegister;
-    private javax.swing.JButton jButtonViewAppointment;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
