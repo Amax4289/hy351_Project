@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 02:22 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: May 12, 2022 at 01:44 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,7 @@ CREATE TABLE `appointment` (
 
 CREATE TABLE `citizen` (
   `Citizen_ID` int(11) NOT NULL,
-  `AMKA` bigint(12) NOT NULL,
+  `Citizen_AMKA` bigint(12) NOT NULL,
   `Fullname` varchar(50) NOT NULL,
   `Sex` varchar(15) NOT NULL,
   `Birthdate` date NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `citizen` (
 -- Dumping data for table `citizen`
 --
 
-INSERT INTO `citizen` (`Citizen_ID`, `AMKA`, `Fullname`, `Sex`, `Birthdate`, `Phone`, `Email`, `Type`) VALUES
+INSERT INTO `citizen` (`Citizen_ID`, `Citizen_AMKA`, `Fullname`, `Sex`, `Birthdate`, `Phone`, `Email`, `Type`) VALUES
 (1, 11111111111, 'Rafail Balaskas', 'Male', '1999-06-15', 99888888, 'r.balaskas.sd@gmail.com', 'Nurse'),
 (2, 22222222222, 'Andreas Amaxaris', 'Male', '1999-01-01', 99777777, 'amax@gmail.com', 'Doctor'),
 (3, 33333333333, 'Dimitris Dimitrakis', 'Male', '1999-06-30', 99666666, 'jimmys11@gmail.com', 'Citizen'),
@@ -74,7 +74,7 @@ CREATE TABLE `symptoms` (
   `Symptoms_ID` int(11) NOT NULL,
   `Appointment_ID` int(11) NOT NULL,
   `Citizen_AMKA` int(11) NOT NULL,
-  `Vaccine_Company` varchar(30) NOT NULL,
+  `Vaccine_Name` varchar(30) NOT NULL,
   `Dose` int(1) NOT NULL,
   `Date` date NOT NULL,
   `Comments` varchar(100) NOT NULL
@@ -106,7 +106,7 @@ INSERT INTO `vaccination_center` (`Vaccination_Center_ID`, `Address`) VALUES
 --
 
 CREATE TABLE `vaccine` (
-  `Company_Name` varchar(30) NOT NULL,
+  `Vaccine_Name` varchar(30) NOT NULL,
   `Supplies` int(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -114,7 +114,7 @@ CREATE TABLE `vaccine` (
 -- Dumping data for table `vaccine`
 --
 
-INSERT INTO `vaccine` (`Company_Name`, `Supplies`) VALUES
+INSERT INTO `vaccine` (`Vaccine_Name`, `Supplies`) VALUES
 ('Moderna', 1000000),
 ('Oxford/AstraZeneca', 1000000),
 ('Pfizer/BioNTech', 1000000);
@@ -133,7 +133,7 @@ ALTER TABLE `appointment`
 -- Indexes for table `citizen`
 --
 ALTER TABLE `citizen`
-  ADD PRIMARY KEY (`Citizen_ID`,`AMKA`);
+  ADD PRIMARY KEY (`Citizen_ID`,`Citizen_AMKA`);
 
 --
 -- Indexes for table `symptoms`
@@ -151,7 +151,7 @@ ALTER TABLE `vaccination_center`
 -- Indexes for table `vaccine`
 --
 ALTER TABLE `vaccine`
-  ADD PRIMARY KEY (`Company_Name`);
+  ADD PRIMARY KEY (`Vaccine_Name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
