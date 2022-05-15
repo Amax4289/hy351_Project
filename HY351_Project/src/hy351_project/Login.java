@@ -5,6 +5,8 @@
  */
 package hy351_project;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Amax
@@ -95,7 +97,14 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonbackToHomepagefromLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonbackToHomepagefromLoginActionPerformed
-        // TODO add your handling code here:
+
+        this.setVisible(false);
+        Homepage homepage = new Homepage();
+        homepage.setVisible(true);
+        homepage.setTitle("Home Page");
+        homepage.pack();
+        homepage.setLocationRelativeTo(null);
+        homepage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButtonbackToHomepagefromLoginActionPerformed
 
     /**
