@@ -5,6 +5,8 @@
  */
 package hy351_project;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Amax
@@ -128,10 +130,26 @@ public class Homepage extends javax.swing.JFrame {
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         // TODO add your handling code here:
+
+        this.setVisible(false);
+        Login loginpage = new Login();
+        loginpage.setVisible(true);
+        loginpage.setTitle("Login Page");
+        loginpage.pack();
+        loginpage.setLocationRelativeTo(null);
+        loginpage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        Register registerpage = new Register();
+        registerpage.setVisible(true);
+        registerpage.setTitle("Registration Page");
+        registerpage.pack();
+        registerpage.setLocationRelativeTo(null);
+        registerpage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     /**
