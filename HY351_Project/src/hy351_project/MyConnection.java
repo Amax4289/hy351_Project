@@ -12,8 +12,11 @@ import java.sql.DriverManager;
  * @author USER
  */
 public class MyConnection {
-<<<<<<< HEAD
 
+    /**
+     *
+     * @return
+     */
     public static java.sql.Connection getConnection() {
 
         java.sql.Connection con = null;
@@ -27,7 +30,7 @@ public class MyConnection {
 
         return con;
     }
-=======
+
     
     public static java.sql.Connection getConnection() {
 		
@@ -44,5 +47,5 @@ public class MyConnection {
 		
 		return con;
 	}
->>>>>>> rb
+
 }
