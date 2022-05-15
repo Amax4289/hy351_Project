@@ -11,7 +11,7 @@ import java.sql.DriverManager;
  *
  * @author USER
  */
-public class Connection {
+public class MyConnection {
     
     public static java.sql.Connection getConnection() {
 		
