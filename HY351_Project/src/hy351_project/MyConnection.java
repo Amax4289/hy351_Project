@@ -5,25 +5,24 @@
  */
 package hy351_project;
 
-import java.sql.DriverManager;
-
 /**
  *
  * @author USER
  */
-public class Connection {
-
-    public static java.sql.Connection getConnection() {
-
-        java.sql.Connection con = null;
-
-        try {
+public class MyConnection {
+     public static java.sql.Connection getConnection() {
+		
+	java.sql.Connection con = null;
+		
+	try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/hy351", "root", "");
-        } catch (Exception e) {
+            con = DriverManager.getConnection("jdbc:mysql://localhost/hy351","root","");
+	}
+	catch(Exception e){
             System.out.println(e.getMessage());
-        }
-
-        return con;
+	}
+		
+		
+	return con;
     }
 }
