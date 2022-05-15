@@ -31,12 +31,21 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         vaccinationCenterDropdown = new javax.swing.JComboBox<>();
         vaccinationCenterLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        AMKA_textfield = new javax.swing.JTextField();
+        vaccine_company_textbox = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         DeleteAccount_Item = new javax.swing.JMenuItem();
@@ -48,6 +57,8 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         jMenu1.setText("jMenu1");
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +131,55 @@ public class UserHomepage extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Profile", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Vaccine Company :");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 190, 50));
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("AMKA :");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 190, 50));
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Application for Covid Certificate");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 430, 50));
+
+        AMKA_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AMKA_textfield.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(AMKA_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 220, 30));
+
+        vaccine_company_textbox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        vaccine_company_textbox.setForeground(new java.awt.Color(255, 255, 255));
+        vaccine_company_textbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pfizer/BioNTech", "Oxford/AstraZeneca", "Moderna" }));
+        vaccine_company_textbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vaccine_company_textboxActionPerformed(evt);
+            }
+        });
+        jPanel4.add(vaccine_company_textbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, 220, 30));
+
+        jButton1.setBackground(new java.awt.Color(0, 169, 168));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jButton1.setText("Submit");
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 250, 140, 40));
+
+        jButton2.setBackground(new java.awt.Color(0, 169, 168));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jButton2.setText("Clear");
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 140, 40));
+
+        jTabbedPane2.addTab("Apply for Covid Certificate", jPanel4);
+
         jMenu2.setText("Account");
 
         DeleteAccount_Item.setText("Delete Account");
@@ -164,6 +224,10 @@ public class UserHomepage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_DeleteAccount_ItemActionPerformed
 
+    private void vaccine_company_textboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vaccine_company_textboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vaccine_company_textboxActionPerformed
+
     
     
     /**
@@ -202,7 +266,14 @@ public class UserHomepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AMKA_textfield;
     private javax.swing.JMenuItem DeleteAccount_Item;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
@@ -212,8 +283,10 @@ public class UserHomepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JComboBox<String> vaccinationCenterDropdown;
     private javax.swing.JLabel vaccinationCenterLabel;
+    private javax.swing.JComboBox<String> vaccine_company_textbox;
     // End of variables declaration//GEN-END:variables
 }
