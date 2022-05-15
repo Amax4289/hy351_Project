@@ -31,6 +31,7 @@ public class MyConnection {
         return con;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     
     public static java.sql.Connection getConnection() {
@@ -49,6 +50,8 @@ public class MyConnection {
 		return con;
 	}
 
+=======
+>>>>>>> parent of 9e35cf8 (Updates)
 =======
 >>>>>>> parent of 9e35cf8 (Updates)
 }
