@@ -32,6 +32,9 @@ public class MyConnection {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of fdf4115 (.)
 
     
     public static java.sql.Connection getConnection() {
@@ -50,8 +53,11 @@ public class MyConnection {
 		return con;
 	}
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 9e35cf8 (Updates)
 =======
 >>>>>>> parent of 9e35cf8 (Updates)
+=======
+>>>>>>> parent of fdf4115 (.)
 }
