@@ -30,10 +30,35 @@ public class Register extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabelRegister = new javax.swing.JLabel();
         jButtonbackToHomepagefromRegister = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelBirthdate = new javax.swing.JLabel();
+        jTextFieldLastName = new javax.swing.JTextField();
+        jTextFieldFirstName1 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jTextFieldDay = new javax.swing.JTextField();
+        jTextFieldMonth = new javax.swing.JTextField();
+        jTextFieldYear = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabelUsername = new javax.swing.JLabel();
+        jLabelPassword = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelTelephone = new javax.swing.JLabel();
+        jLabelAMKA = new javax.swing.JLabel();
+        jTextFieldUsername = new javax.swing.JTextField();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jTextFieldAMKA = new javax.swing.JTextField();
+        jTextFieldTelephone = new javax.swing.JTextField();
+        jButtonRegister = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,6 +80,133 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("First Name:");
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Last Name:");
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Sex:");
+
+        jLabelBirthdate.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelBirthdate.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelBirthdate.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelBirthdate.setText("Date of Birth:");
+
+        jTextFieldLastName.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldLastName.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldLastName.setForeground(new java.awt.Color(0, 0, 0));
+
+        jTextFieldFirstName1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldFirstName1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldFirstName1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jRadioButton1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton1.setText("Male");
+
+        jRadioButton2.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(0, 0, 0));
+        jRadioButton2.setText("Female");
+
+        jTextFieldDay.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldDay.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
+        jTextFieldDay.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldDay.setText("Day");
+        jTextFieldDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDayActionPerformed(evt);
+            }
+        });
+
+        jTextFieldMonth.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldMonth.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
+        jTextFieldMonth.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldMonth.setText("Month");
+
+        jTextFieldYear.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldYear.setFont(new java.awt.Font("Dialog", 2, 18)); // NOI18N
+        jTextFieldYear.setForeground(new java.awt.Color(0, 0, 0));
+        jTextFieldYear.setText("Year");
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("/");
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("/");
+
+        jLabelUsername.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelUsername.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelUsername.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelUsername.setText("Username:");
+
+        jLabelPassword.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelPassword.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelPassword.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelPassword.setText("Password:");
+
+        jLabelEmail.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelEmail.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelEmail.setText("Email:");
+
+        jLabelTelephone.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelTelephone.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelTelephone.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelTelephone.setText("Telephone:");
+
+        jLabelAMKA.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelAMKA.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabelAMKA.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelAMKA.setText("AMKA:");
+
+        jTextFieldUsername.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldUsername.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldUsername.setForeground(new java.awt.Color(0, 0, 0));
+
+        jTextFieldEmail.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldEmail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldEmail.setForeground(new java.awt.Color(0, 0, 0));
+
+        jTextFieldAMKA.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldAMKA.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldAMKA.setForeground(new java.awt.Color(0, 0, 0));
+
+        jTextFieldTelephone.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldTelephone.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jTextFieldTelephone.setForeground(new java.awt.Color(0, 0, 0));
+
+        jButtonRegister.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonRegister.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButtonRegister.setForeground(new java.awt.Color(0, 0, 0));
+        jButtonRegister.setText("Register Citizen");
+        jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRegisterActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setPreferredSize(new java.awt.Dimension(120, 32));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -62,21 +214,103 @@ public class Register extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonbackToHomepagefromRegister)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelRegister))
-                    .addComponent(jButtonbackToHomepagefromRegister))
-                .addContainerGap(150, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelRegister)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel3))
+                                        .addGap(32, 32, 32)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldFirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jRadioButton1)
+                                            .addComponent(jRadioButton2)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabelBirthdate)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextFieldDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(55, 55, 55)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabelUsername)
+                                    .addComponent(jLabelPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelTelephone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabelAMKA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldUsername)
+                                    .addComponent(jTextFieldEmail)
+                                    .addComponent(jTextFieldAMKA)
+                                    .addComponent(jTextFieldTelephone)
+                                    .addComponent(jButtonRegister, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelRegister)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelRegister)
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextFieldFirstName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelUsername)
+                            .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelPassword)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jLabelEmail)
+                            .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jRadioButton2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelAMKA)
+                            .addComponent(jTextFieldAMKA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldTelephone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTelephone)
+                    .addComponent(jTextFieldYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextFieldMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextFieldDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBirthdate))
+                .addGap(45, 45, 45)
+                .addComponent(jButtonRegister)
+                .addGap(47, 47, 47)
                 .addComponent(jButtonbackToHomepagefromRegister)
                 .addContainerGap())
         );
@@ -105,6 +339,14 @@ public class Register extends javax.swing.JFrame {
         homepage.setLocationRelativeTo(null);
         homepage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jButtonbackToHomepagefromRegisterActionPerformed
+
+    private void jTextFieldDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDayActionPerformed
+
+    private void jButtonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonRegisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,9 +384,34 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButtonRegister;
     private javax.swing.JButton jButtonbackToHomepagefromRegister;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelAMKA;
+    private javax.swing.JLabel jLabelBirthdate;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelPassword;
     private javax.swing.JLabel jLabelRegister;
+    private javax.swing.JLabel jLabelTelephone;
+    private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JTextField jTextFieldAMKA;
+    private javax.swing.JTextField jTextFieldDay;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldFirstName1;
+    private javax.swing.JTextField jTextFieldLastName;
+    private javax.swing.JTextField jTextFieldMonth;
+    private javax.swing.JTextField jTextFieldTelephone;
+    private javax.swing.JTextField jTextFieldUsername;
+    private javax.swing.JTextField jTextFieldYear;
     // End of variables declaration//GEN-END:variables
 }

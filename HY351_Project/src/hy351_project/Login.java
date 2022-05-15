@@ -38,12 +38,12 @@ public class Login extends javax.swing.JFrame {
         jLabelUsername = new javax.swing.JLabel();
         jLabelPassword = new javax.swing.JLabel();
         jTextFieldUsername = new javax.swing.JTextField();
-        jTextFieldPassword = new javax.swing.JTextField();
         jRadioButtonCitizen = new javax.swing.JRadioButton();
         jRadioButtonDoctor = new javax.swing.JRadioButton();
         jRadioButtonNurse = new javax.swing.JRadioButton();
         jLabelType = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,9 +84,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jTextFieldPassword.setBackground(new java.awt.Color(255, 255, 255));
-        jTextFieldPassword.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-
         jRadioButtonCitizen.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButtonCitizen);
         jRadioButtonCitizen.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -115,6 +112,11 @@ public class Login extends javax.swing.JFrame {
         jButtonLogin.setForeground(new java.awt.Color(0, 0, 0));
         jButtonLogin.setText("Login");
 
+        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
+        jPasswordField1.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -138,9 +140,9 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(jRadioButtonCitizen)
                                     .addComponent(jRadioButtonDoctor)
                                     .addComponent(jRadioButtonNurse)
-                                    .addComponent(jTextFieldUsername)
-                                    .addComponent(jTextFieldPassword)
-                                    .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)))))
+                                    .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldUsername)))))
                     .addComponent(jButtonbackToHomepagefromLogin))
                 .addContainerGap(131, Short.MAX_VALUE))
         );
@@ -150,6 +152,16 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButtonCitizen)
+                            .addComponent(jLabelType))
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonDoctor)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonNurse))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelLogin)
                         .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -158,16 +170,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelPassword)
-                            .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4))
-                .addGap(1, 1, 1)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonCitizen)
-                    .addComponent(jLabelType))
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonDoctor)
-                .addGap(18, 18, 18)
-                .addComponent(jRadioButtonNurse)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButtonLogin)
                 .addGap(20, 20, 20)
@@ -179,7 +182,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,10 +252,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelType;
     private javax.swing.JLabel jLabelUsername;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButtonCitizen;
     private javax.swing.JRadioButton jRadioButtonDoctor;
     private javax.swing.JRadioButton jRadioButtonNurse;
-    private javax.swing.JTextField jTextFieldPassword;
     private javax.swing.JTextField jTextFieldUsername;
     // End of variables declaration//GEN-END:variables
 }
