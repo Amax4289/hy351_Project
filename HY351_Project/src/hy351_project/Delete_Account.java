@@ -30,12 +30,12 @@ public class Delete_Account extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        AMKA_textfield = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         Confirm_DeleteAccount_Button = new javax.swing.JButton();
         Cancel_DeleteAccount_Button = new javax.swing.JButton();
+        Password_textfield = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,28 +47,20 @@ public class Delete_Account extends javax.swing.JFrame {
         jLabel1.setText("Delete Account");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 6, -1, 60));
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 219, 29));
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Confirm Password :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 190, 20));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        AMKA_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        AMKA_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AMKA_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        AMKA_textfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                AMKA_textfieldActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 219, 29));
+        jPanel1.add(AMKA_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 219, 29));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -95,6 +87,12 @@ public class Delete_Account extends javax.swing.JFrame {
         });
         jPanel1.add(Cancel_DeleteAccount_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 120, 40));
 
+        Password_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        Password_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Password_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        Password_textfield.setText("jPasswordField1");
+        jPanel1.add(Password_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 220, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,13 +107,9 @@ public class Delete_Account extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void AMKA_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AMKA_textfieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_AMKA_textfieldActionPerformed
 
     private void Cancel_DeleteAccount_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_DeleteAccount_ButtonActionPerformed
 
@@ -160,13 +154,13 @@ public class Delete_Account extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AMKA_textfield;
     private javax.swing.JButton Cancel_DeleteAccount_Button;
     private javax.swing.JButton Confirm_DeleteAccount_Button;
+    private javax.swing.JPasswordField Password_textfield;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
