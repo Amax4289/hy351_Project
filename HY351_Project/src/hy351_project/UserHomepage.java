@@ -31,21 +31,12 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         vaccinationCenterDropdown = new javax.swing.JComboBox<>();
         vaccinationCenterLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        AMKA_textfield = new javax.swing.JTextField();
-        Vaccine_Company_Box = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         DeleteAccount_Item = new javax.swing.JMenuItem();
@@ -57,8 +48,6 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         jMenu1.setText("jMenu1");
-
-        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,53 +120,6 @@ public class UserHomepage extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Profile", jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Application for Covid Certificate");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 19, 279, 37));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Vaccine Company :");
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, 29));
-
-        AMKA_textfield.setBackground(new java.awt.Color(255, 255, 255));
-        AMKA_textfield.setForeground(new java.awt.Color(0, 0, 0));
-        AMKA_textfield.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AMKA_textfieldActionPerformed(evt);
-            }
-        });
-        jPanel4.add(AMKA_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 219, 30));
-
-        Vaccine_Company_Box.setBackground(new java.awt.Color(255, 255, 255));
-        Vaccine_Company_Box.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Vaccine_Company_Box.setForeground(new java.awt.Color(0, 0, 0));
-        Vaccine_Company_Box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pfizer/BioNTech", "Oxford/AstraZeneca", "Moderna" }));
-        jPanel4.add(Vaccine_Company_Box, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 220, -1));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("AMKA :");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, 29));
-
-        jButton1.setBackground(new java.awt.Color(51, 179, 180));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("Clear");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 130, 30));
-
-        jButton2.setBackground(new java.awt.Color(51, 179, 180));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("Submit");
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 130, 30));
-
-        jTabbedPane2.addTab("Apply for Covid Certificate", jPanel4);
-
         jMenu2.setText("Account");
 
         DeleteAccount_Item.setText("Delete Account");
@@ -200,7 +142,7 @@ public class UserHomepage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane2)
         );
 
         pack();
@@ -221,10 +163,6 @@ public class UserHomepage extends javax.swing.JFrame {
         DA.setLocationRelativeTo(null);
         
     }//GEN-LAST:event_DeleteAccount_ItemActionPerformed
-
-    private void AMKA_textfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AMKA_textfieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AMKA_textfieldActionPerformed
 
     
     
@@ -264,25 +202,16 @@ public class UserHomepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AMKA_textfield;
     private javax.swing.JMenuItem DeleteAccount_Item;
-    private javax.swing.JComboBox<String> Vaccine_Company_Box;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JComboBox<String> vaccinationCenterDropdown;
     private javax.swing.JLabel vaccinationCenterLabel;
