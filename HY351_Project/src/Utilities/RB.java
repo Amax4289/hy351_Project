@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class RB {
     
     public void insertUpdateDeleteStudent(Integer id) {
-    
+        /*
         int YesorNo = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?", "Delete Account",JOptionPane.OK_CANCEL_OPTION,0);
             
             if (YesorNo == JOptionPane.OK_OPTION){
@@ -52,7 +52,8 @@ public class RB {
             	} catch (ClassNotFoundException ex) {
                     Logger.getLogger(Trader_HomePage.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }
+            }*/
     }
+
     
 }

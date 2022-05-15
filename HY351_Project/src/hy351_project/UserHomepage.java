@@ -16,6 +16,7 @@ public class UserHomepage extends javax.swing.JFrame {
      */
     public UserHomepage() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,12 +27,27 @@ public class UserHomepage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         vaccinationCenterDropdown = new javax.swing.JComboBox<>();
         vaccinationCenterLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        DeleteAccount_Item = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu5.setText("jMenu5");
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +120,20 @@ public class UserHomepage extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Profile", jPanel3);
 
+        jMenu2.setText("Account");
+
+        DeleteAccount_Item.setText("Delete Account");
+        DeleteAccount_Item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteAccount_ItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(DeleteAccount_Item);
+
+        jMenuBar2.add(jMenu2);
+
+        setJMenuBar(jMenuBar2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,6 +152,20 @@ public class UserHomepage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_vaccinationCenterDropdownActionPerformed
 
+    
+    
+    private void DeleteAccount_ItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccount_ItemActionPerformed
+        
+        Delete_Account DA = new Delete_Account();
+        DA.setVisible(true);
+        DA.pack();
+        DA.setTitle("Delete Account");
+        DA.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_DeleteAccount_ItemActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -158,6 +202,13 @@ public class UserHomepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem DeleteAccount_Item;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
