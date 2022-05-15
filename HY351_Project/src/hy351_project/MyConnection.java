@@ -30,34 +30,4 @@ public class MyConnection {
 
         return con;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of fdf4115 (.)
-
-    
-    public static java.sql.Connection getConnection() {
-		
-		java.sql.Connection con = null;
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/hy351","root","");
-		}
-		catch(Exception e){
-			System.out.println(e.getMessage());
-		}
-		
-		
-		return con;
-	}
-
-<<<<<<< HEAD
-=======
->>>>>>> parent of 9e35cf8 (Updates)
-=======
->>>>>>> parent of 9e35cf8 (Updates)
-=======
->>>>>>> parent of fdf4115 (.)
 }
