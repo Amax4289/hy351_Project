@@ -13,6 +13,10 @@ import java.sql.DriverManager;
  */
 public class MyConnection {
 
+    /**
+     *
+     * @return
+     */
     public static java.sql.Connection getConnection() {
 
         java.sql.Connection con = null;
