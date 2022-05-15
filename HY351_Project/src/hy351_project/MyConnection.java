@@ -9,7 +9,7 @@ package hy351_project;
  *
  * @author USER
  */
-public class Connection {
+public class MyConnection {
      public static java.sql.Connection getConnection() {
 		
 	java.sql.Connection con = null;
