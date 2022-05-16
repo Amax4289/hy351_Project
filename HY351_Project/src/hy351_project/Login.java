@@ -5,6 +5,7 @@
  */
 package hy351_project;
 
+import static Utilities.Amax.Login;
 import javax.swing.JFrame;
 
 /**
@@ -89,18 +90,33 @@ public class Login extends javax.swing.JFrame {
         jRadioButtonCitizen.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jRadioButtonCitizen.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButtonCitizen.setText("Citizen");
+        jRadioButtonCitizen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonCitizenActionPerformed(evt);
+            }
+        });
 
         jRadioButtonDoctor.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButtonDoctor);
         jRadioButtonDoctor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jRadioButtonDoctor.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButtonDoctor.setText("Doctor");
+        jRadioButtonDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonDoctorActionPerformed(evt);
+            }
+        });
 
         jRadioButtonNurse.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jRadioButtonNurse);
         jRadioButtonNurse.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jRadioButtonNurse.setForeground(new java.awt.Color(0, 0, 0));
         jRadioButtonNurse.setText("Nurse");
+        jRadioButtonNurse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNurseActionPerformed(evt);
+            }
+        });
 
         jLabelType.setBackground(new java.awt.Color(255, 255, 255));
         jLabelType.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -111,11 +127,20 @@ public class Login extends javax.swing.JFrame {
         jButtonLogin.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jButtonLogin.setForeground(new java.awt.Color(0, 0, 0));
         jButtonLogin.setText("Login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
 
         jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
         jPasswordField1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jPasswordField1.setForeground(new java.awt.Color(0, 0, 0));
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,6 +231,61 @@ public class Login extends javax.swing.JFrame {
     private void jTextFieldUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldUsernameActionPerformed
+
+    /* LOGIN BUTTON */
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+
+        /* Get Fields */
+        String Username = jTextFieldUsername.getText();
+        String Password = jPasswordField1.getText();
+
+        String role = "";
+
+        Boolean citizen = jRadioButtonCitizen.isSelected();
+        Boolean doctor = jRadioButtonDoctor.isSelected();
+        Boolean nurse = jRadioButtonNurse.isSelected();
+
+        if (citizen) {
+            role = "Citizen";
+        } else if (doctor) {
+            role = "Doctor";
+        } else if (nurse) {
+            role = "Nurse";
+        }
+
+        if (Username != null && Password != null && role != null) {
+
+            if (Login(Username, Password, role)) {
+                // success
+            } else {
+                // bad credentials, try again
+            }
+
+        } else {
+
+            // display error, empty fields
+        }
+
+        System.out.println(Username);
+        System.out.println(Password);
+
+    }//GEN-LAST:event_jButtonLoginActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jRadioButtonCitizenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonCitizenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonCitizenActionPerformed
+
+    private void jRadioButtonDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonDoctorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonDoctorActionPerformed
+
+    private void jRadioButtonNurseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNurseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonNurseActionPerformed
 
     /**
      * @param args the command line arguments
