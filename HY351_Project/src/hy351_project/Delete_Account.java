@@ -76,6 +76,11 @@ public class Delete_Account extends javax.swing.JFrame {
         Confirm_Button.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         Confirm_Button.setForeground(new java.awt.Color(255, 0, 0));
         Confirm_Button.setText("Confirm");
+        Confirm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_ButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(Confirm_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 130, 40));
 
         Cancel_Button.setBackground(new java.awt.Color(153, 153, 153));
@@ -111,6 +116,10 @@ public class Delete_Account extends javax.swing.JFrame {
         
         this.setVisible(false);
     }//GEN-LAST:event_Cancel_ButtonActionPerformed
+
+    private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
