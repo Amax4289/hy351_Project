@@ -6,7 +6,11 @@
 package hy351_project;
 
 import static Utilities.Amax.Login;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,6 +36,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jDialog1 = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabelLogin = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -45,6 +50,17 @@ public class Login extends javax.swing.JFrame {
         jLabelType = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -147,60 +163,70 @@ public class Login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelLogin)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(jLabelUsername)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelLogin)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabelUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabelPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabelType))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jRadioButtonCitizen)
-                                    .addComponent(jRadioButtonDoctor)
-                                    .addComponent(jRadioButtonNurse)
-                                    .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldUsername)))))
-                    .addComponent(jButtonbackToHomepagefromLogin))
-                .addContainerGap(131, Short.MAX_VALUE))
+                        .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(249, 249, 249)
+                .addComponent(jLabelType)
+                .addGap(64, 64, 64)
+                .addComponent(jRadioButtonCitizen))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(364, 364, 364)
+                .addComponent(jRadioButtonDoctor))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jButtonbackToHomepagefromLogin))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(364, 364, 364)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButtonNurse)
+                    .addComponent(jButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(1, 1, 1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButtonCitizen)
-                            .addComponent(jLabelType))
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButtonDoctor)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButtonNurse))
+                    .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelLogin)
                         .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelUsername)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(jLabelUsername))
                             .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelPassword)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(3, 3, 3)
+                                .addComponent(jLabelPassword))
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabelType))
+                    .addComponent(jRadioButtonCitizen))
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButtonDoctor)
+                .addGap(18, 18, 18)
+                .addComponent(jRadioButtonNurse)
+                .addGap(18, 18, 18)
                 .addComponent(jButtonLogin)
                 .addGap(20, 20, 20)
-                .addComponent(jButtonbackToHomepagefromLogin)
-                .addContainerGap())
+                .addComponent(jButtonbackToHomepagefromLogin))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -253,17 +279,30 @@ public class Login extends javax.swing.JFrame {
             role = "Nurse";
         }
 
-        if (Username != null && Password != null && role != null) {
+        if (Username != "" && Password != "" && role != "") {
 
-            if (Login(Username, Password, role)) {
-                // success
-            } else {
-                // bad credentials, try again
+            try {
+                if (Login(Username, Password, role)) {
+                    /* Success */
+                    this.setVisible(false);
+                    UserHomepage userhomepage = new UserHomepage();
+                    userhomepage.setVisible(true);
+                    userhomepage.setTitle("User Homepage");
+                    userhomepage.pack();
+                    userhomepage.setLocationRelativeTo(null);
+                    userhomepage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+                } else {
+                    /* Failure, Incorrect Username or Password or Role */
+                    JOptionPane.showMessageDialog(null, "Username or Passowrd is incorrect.\nPlease try again.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } else {
-
-            // display error, empty fields
+            /* Empty Input Fields */
+            JOptionPane.showMessageDialog(null, "Input Fields are empty", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
         System.out.println(Username);
@@ -326,6 +365,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JButton jButtonbackToHomepagefromLogin;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelLogin;
     private javax.swing.JLabel jLabelPassword;
