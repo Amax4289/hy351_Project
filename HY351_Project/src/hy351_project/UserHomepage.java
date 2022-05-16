@@ -215,7 +215,7 @@ public class UserHomepage extends javax.swing.JFrame {
     
     
     private void DeleteAccount_ItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteAccount_ItemActionPerformed
-        this.setVisible(false);
+        
         Delete_Account DA = new Delete_Account();
         DA.setVisible(true);
         DA.pack();

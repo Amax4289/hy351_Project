@@ -10,10 +10,5 @@ package Utilities;
  * @author USER
  */
 public class Amax {
-
-    public static Boolean Login(String Username, String Password, String role) {
-
-        return false;
-    }
-
+    
 }
