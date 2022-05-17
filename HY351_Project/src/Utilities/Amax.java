@@ -37,17 +37,14 @@ public class Amax {
         ResultSet res = stmt.getResultSet();
 
         if (res.next() == true) {
-
             username = res.getString("username");
             password = res.getString("password");
         }
 
         if (Username.equals(username) && Password.equals(password)) {
-
             return true;
 
         } else {
-
             return false;
         }
     }

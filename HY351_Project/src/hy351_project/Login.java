@@ -280,6 +280,7 @@ public class Login extends javax.swing.JFrame {
         }
 
         if (Username != "" && Password != "" && role != "") {
+           
 
             try {
                 if (Login(Username, Password, role)) {
