@@ -111,7 +111,7 @@ public class Covid_Certificate extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Certificate Inentifier ");
+        jLabel3.setText("Certificate Identifier ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, -1, 20));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));

@@ -117,7 +117,7 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuBar2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuBar2.setPreferredSize(new java.awt.Dimension(224, 35));
 
-        jMenu2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 102)));
+        jMenu2.setBorder(null);
         jMenu2.setText("Account");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
@@ -136,7 +136,7 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenu3.setEnabled(false);
         jMenuBar2.add(jMenu3);
 
-        Covid_Certificate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 0)));
+        Covid_Certificate.setBorder(null);
         Covid_Certificate.setText(" Covid-19 Certificate");
         Covid_Certificate.setAlignmentX(4.0F);
         Covid_Certificate.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
