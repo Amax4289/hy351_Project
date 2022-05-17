@@ -40,13 +40,80 @@ public class Amax {
             username = res.getString("username");
             password = res.getString("password");
         }
-
+        con.close();
         if (Username.equals(username) && Password.equals(password)) {
+
             return true;
 
         } else {
             return false;
         }
+    }
+
+    public static Boolean Register(String Username, String Password, String FirstName, String LastName, String Sex, String Birthdate, String Email, String Telephone, String AMKA) throws SQLException {
+
+        int Citizen_ID = getID();
+
+        if (Citizen_ID != -1) {
+
+            Citizen_ID++;
+
+            Statement stmt = null;
+            Connection con = null;
+
+            con = getConnection();
+            stmt = con.createStatement();
+
+            StringBuilder insQuery = new StringBuilder();
+
+            insQuery.append("INSERT INTO citizen (Citizen_ID, Citizen_AMKA, Sex, Birthdate, Phone, Email, Type, Num_Of_Dose, password, username, Firstname, Lastname) VALUES (")
+                    .append("'").append(Citizen_ID).append("', ")
+                    .append("'").append(AMKA).append("', ")
+                    .append("'").append(Sex).append("', ")
+                    .append("'").append(Birthdate).append("', ")
+                    .append("'").append(Telephone).append("', ")
+                    .append("'").append(Email).append("', ")
+                    .append("'").append("Citizen").append("', ")
+                    .append("'").append("0").append("', ")
+                    .append("'").append(Password).append("', ")
+                    .append("'").append(Username).append("', ")
+                    .append("'").append(FirstName).append("', ")
+                    .append("'").append(LastName).append("')");
+
+            stmt.execute(insQuery.toString());
+            con.close();
+            return true;
+
+        } else {
+
+            return false;
+        }
+
+    }
+
+    public static Integer getID() throws SQLException {
+
+        Statement stmt = null;
+        Connection con = null;
+
+        con = getConnection();
+        System.out.println("Connection is: " + con);
+
+        stmt = con.createStatement();
+
+        StringBuilder insQuery = new StringBuilder();
+        insQuery.append("Select Citizen_ID from citizen ORDER BY Citizen_ID DESC LIMIT 1");
+
+        stmt.executeQuery(insQuery.toString());
+        ResultSet res = stmt.getResultSet();
+
+        int id = -1;
+
+        if (res.next() == true) {
+            id = res.getInt("Citizen_ID");
+        }
+        con.close();
+        return id;
     }
 
 }
