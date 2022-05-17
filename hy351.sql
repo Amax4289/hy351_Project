@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2022 at 12:14 PM
+-- Generation Time: May 17, 2022 at 09:33 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -29,13 +29,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `appointment` (
   `Appointment_ID` int(11) NOT NULL,
-  `Vaccination_Center_ID` int(11) NOT NULL,
+  `Vaccination_Center_ID` varchar(30) NOT NULL,
   `Vaccine_Name` varchar(30) NOT NULL,
-  `Citizen_AMKA` int(11) NOT NULL,
+  `Citizen_AMKA` bigint(11) NOT NULL,
   `Dose` int(1) NOT NULL,
   `Date` varchar(25) NOT NULL,
   `Time` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`Appointment_ID`, `Vaccination_Center_ID`, `Vaccine_Name`, `Citizen_AMKA`, `Dose`, `Date`, `Time`) VALUES
+(1, 'PAGNI Hospital', 'Moderna', 77777777777, 1, '15/05/2022', '13:00'),
+(2, 'PAGNI Hospital', 'Moderna', 77777777777, 2, '30/05/2022', '11:00');
 
 -- --------------------------------------------------------
 
@@ -232,13 +240,13 @@ ALTER TABLE `vaccine`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `Appointment_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Appointment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `citizen`
 --
 ALTER TABLE `citizen`
-  MODIFY `Citizen_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Citizen_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `doctor`
