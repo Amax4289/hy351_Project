@@ -5,6 +5,12 @@
  */
 package hy351_project;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author USER
@@ -16,6 +22,47 @@ public class Covid_Certificate extends javax.swing.JFrame {
      */
     public Covid_Certificate() {
         initComponents();
+        
+        String amka = Covid_Certificate_Apply.AMKA_for_certificate_textfield.getText();
+        System.out.println("amka isss:   "+amka);
+        AMKA_textfield.setText(amka);
+        
+        int dose = 2;
+        String Vaccine_Name, Date, Firstname, Lastname;
+        String Dose;
+        
+        try {
+            Connection con = MyConnection.getConnection();
+            Statement stmt = con.createStatement();
+            Statement stmt1 = con.createStatement();
+            ResultSet rs,rs1;
+            
+            rs = stmt.executeQuery("SELECT Vaccine_Name, Dose, Date FROM appointment WHERE Citizen_AMKA = '" + amka + "' AND Dose = '" + dose + "'");
+            rs1 = stmt1.executeQuery("SELECT Firstname, Lastname FROM citizen WHERE Citizen_AMKA = '" + amka + "'");
+            
+            if (rs.next()) {
+                Vaccine_Name = rs.getString("Vaccine_Name");
+                Date = rs.getString("Date");
+                Dose = rs.getString("Dose");
+                vaccine_textfield.setText(Vaccine_Name);
+                vaccinationdate_textfield.setText(Date);
+                dose_textfield.setText(Dose);
+               
+                
+                
+            }
+            if(rs1.next()){
+                Firstname = rs1.getString("Firstname");
+                Lastname = rs1.getString("Lastname");
+                fullname_textfield.setText(Firstname + " "+ Lastname);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later!");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later");
+            System.err.println("Got an exception!");
+        }
     }
 
     /**
@@ -27,17 +74,121 @@ public class Covid_Certificate extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        fullname_textfield = new javax.swing.JTextField();
+        vaccinationdate_textfield = new javax.swing.JTextField();
+        dose_textfield = new javax.swing.JTextField();
+        AMKA_textfield = new javax.swing.JTextField();
+        vaccine_textfield = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel1.setText("Covid-19 Certificate");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("FullName :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 121, 36));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Certificate Inentifier ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 320, -1, 20));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 231, 78, -1));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Vaccine :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 121, 36));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Vaccination  Date :");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+
+        fullname_textfield.setEditable(false);
+        fullname_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        fullname_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        fullname_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(fullname_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 276, -1));
+
+        vaccinationdate_textfield.setEditable(false);
+        vaccinationdate_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        vaccinationdate_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        vaccinationdate_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(vaccinationdate_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 276, -1));
+
+        dose_textfield.setEditable(false);
+        dose_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        dose_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dose_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(dose_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 276, -1));
+
+        AMKA_textfield.setEditable(false);
+        AMKA_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        AMKA_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AMKA_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(AMKA_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 276, -1));
+
+        vaccine_textfield.setEditable(false);
+        vaccine_textfield.setBackground(new java.awt.Color(255, 255, 255));
+        vaccine_textfield.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        vaccine_textfield.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(vaccine_textfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 276, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/Qr-Code.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 320, 280));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("AMKA :");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 121, 36));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("NFI841n581bb13msXZslpjc41df354");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, 230, 20));
+
+        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Dose :");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 60, 36));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 995, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -79,5 +230,21 @@ public class Covid_Certificate extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AMKA_textfield;
+    private javax.swing.JTextField dose_textfield;
+    private javax.swing.JTextField fullname_textfield;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField vaccinationdate_textfield;
+    private javax.swing.JTextField vaccine_textfield;
     // End of variables declaration//GEN-END:variables
 }
