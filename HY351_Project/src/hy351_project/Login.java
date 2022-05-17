@@ -280,7 +280,6 @@ public class Login extends javax.swing.JFrame {
         }
 
         if (Username != "" && Password != "" && role != "") {
-           
 
             try {
                 if (Login(Username, Password, role)) {
@@ -305,10 +304,6 @@ public class Login extends javax.swing.JFrame {
             /* Empty Input Fields */
             JOptionPane.showMessageDialog(null, "Input Fields are empty", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        System.out.println(Username);
-        System.out.println(Password);
-
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
