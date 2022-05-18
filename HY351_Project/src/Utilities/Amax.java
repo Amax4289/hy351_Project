@@ -6,10 +6,12 @@
 package Utilities;
 
 import static hy351_project.MyConnection.getConnection;
+import java.util.List;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -112,8 +114,67 @@ public class Amax {
         if (res.next() == true) {
             id = res.getInt("Citizen_ID");
         }
+        stmt.close();
         con.close();
         return id;
+    }
+
+    public static List<String> Confirm_Identity(String AMKA, String Password) throws SQLException {
+
+        Statement stmt = null;
+        Connection con = null;
+
+        con = getConnection();
+        stmt = con.createStatement();
+
+        StringBuilder insQuery = new StringBuilder();
+
+        insQuery.append("SELECT * FROM citizen WHERE Citizen_AMKA = '" + AMKA + "' AND password = '" + Password + "'");
+        stmt.executeQuery(insQuery.toString());
+
+        ResultSet res = stmt.getResultSet();
+
+        List<String> citizen_fields = new ArrayList<String>();
+
+        if (res.next() == true) {
+
+            citizen_fields.add(res.getString("Citizen_ID"));
+            citizen_fields.add(res.getString("Citizen_AMKA"));
+            citizen_fields.add(res.getString("Sex"));
+            citizen_fields.add(res.getString("Birthdate"));
+            citizen_fields.add(res.getString("Phone"));
+            citizen_fields.add(res.getString("Email"));
+            citizen_fields.add(res.getString("Num_Of_Dose"));
+            citizen_fields.add(res.getString("password"));
+            citizen_fields.add(res.getString("username"));
+            citizen_fields.add(res.getString("Firstname"));
+            citizen_fields.add(res.getString("Lastname"));
+
+        }
+        con.close();
+        stmt.close();
+        return citizen_fields;
+    }
+
+    public static Boolean Update_Details(String AMKA, String Password, String Email, String Telephone) throws SQLException {
+
+        Statement stmt = null;
+        Connection con = null;
+
+        con = getConnection();
+        stmt = con.createStatement();
+
+        StringBuilder insQuery = new StringBuilder();
+        insQuery.append("UPDATE citizen SET ")
+                .append("password = '").append(Password).append("', ")
+                .append("Email = '").append(Email).append("', ")
+                .append("Phone = '").append(Telephone).append("' ")
+                .append("WHERE Citizen_AMKA = '").append(AMKA).append("'");
+
+        stmt.execute(insQuery.toString());
+        stmt.close();
+        con.close();
+        return true;
     }
 
 }
