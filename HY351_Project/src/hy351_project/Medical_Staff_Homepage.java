@@ -147,20 +147,37 @@ public class Medical_Staff_Homepage extends javax.swing.JFrame {
         String amka = AMKA_textfield.getText();
         String No_Of_Dose = No_Of_Dose_textfield.getText();
         
+        int Dose_to_int = Integer.parseInt(No_Of_Dose);
+        int increase_Dose = 0;
+        
+        if(Dose_to_int == 1){
+            increase_Dose = 1;
+        }
+        else if(Dose_to_int == 2){
+            increase_Dose = 2;
+        } 
+        else{
+            JOptionPane.showMessageDialog(null, "The user does not have any active appointment, or wrong details!");
+        }
+        
         System.out.println("amka is: "+ amka + " and No_of_Dose is: "+ No_Of_Dose);
         
         if(amka == null || No_Of_Dose == null){
             JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
-        }
+        } 
         else{
             try {
                 Connection con = MyConnection.getConnection();
                 Statement stmt = con.createStatement();
+                Statement stmt1 = con.createStatement();
                 ResultSet rs;
             
                 rs = stmt.executeQuery("SELECT * FROM appointment WHERE Citizen_AMKA = '" + amka + "' AND Dose = '" + No_Of_Dose + "'");
-            
+                
+                
                 if(rs.next()){
+                    String update = "UPDATE citizen SET Num_Of_Dose ='" + increase_Dose + "' WHERE Citizen_AMKA = '" + amka + "'";
+                    stmt1.executeUpdate(update);
                     stmt.close();
                     con.close();
                     JOptionPane.showMessageDialog(null, "Τhe user's appointment with AMKA " + amka + "\nwas successfully confirmed!");

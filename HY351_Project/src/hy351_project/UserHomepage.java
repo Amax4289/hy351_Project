@@ -128,6 +128,7 @@ public class UserHomepage extends javax.swing.JFrame {
         });
         jMenuEdit_Profile.add(DeleteAccount_Item);
 
+        jRadioButtonMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("Edit Profile");
         jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
