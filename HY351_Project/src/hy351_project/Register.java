@@ -357,7 +357,7 @@ public class Register extends javax.swing.JFrame {
                 && Birthdate != ""
                 && email != "") {
 
-            if (flag) {
+            if (flag) { // IF email is in correct form
 
                 try {
                     if (Register(Username, Password, FirstName, LastName, sex, Birthdate, email, Telephone, AMKA)) {

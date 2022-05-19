@@ -5,10 +5,7 @@
  */
 package hy351_project;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 
 /**
  *
@@ -45,8 +42,9 @@ public class UserHomepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuEdit_Profile = new javax.swing.JMenu();
         DeleteAccount_Item = new javax.swing.JMenuItem();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu3 = new javax.swing.JMenu();
         Covid_Certificate = new javax.swing.JMenu();
         Apply_for_certificate = new javax.swing.JMenuItem();
@@ -117,9 +115,9 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuBar2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuBar2.setPreferredSize(new java.awt.Dimension(224, 35));
 
-        jMenu2.setBorder(null);
-        jMenu2.setText("Account");
-        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jMenuEdit_Profile.setBorder(null);
+        jMenuEdit_Profile.setText("Account");
+        jMenuEdit_Profile.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         DeleteAccount_Item.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         DeleteAccount_Item.setText("Delete Account");
@@ -128,9 +126,18 @@ public class UserHomepage extends javax.swing.JFrame {
                 DeleteAccount_ItemActionPerformed(evt);
             }
         });
-        jMenu2.add(DeleteAccount_Item);
+        jMenuEdit_Profile.add(DeleteAccount_Item);
 
-        jMenuBar2.add(jMenu2);
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("Edit Profile");
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuEdit_Profile.add(jRadioButtonMenuItem1);
+
+        jMenuBar2.add(jMenuEdit_Profile);
 
         jMenu3.setText("   ");
         jMenu3.setEnabled(false);
@@ -189,7 +196,7 @@ public class UserHomepage extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteAccount_ItemActionPerformed
 
     private void Covid_CertificateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Covid_CertificateActionPerformed
-        
+
     }//GEN-LAST:event_Covid_CertificateActionPerformed
 
     private void Apply_for_certificateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apply_for_certificateActionPerformed
@@ -199,6 +206,18 @@ public class UserHomepage extends javax.swing.JFrame {
         DA.setTitle("Covid-19 Certificate Application");
         DA.setLocationRelativeTo(null);
     }//GEN-LAST:event_Apply_for_certificateActionPerformed
+
+    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+
+        this.setVisible(false);
+        Edit_Profile EP = new Edit_Profile();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("User Profile");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -241,15 +260,16 @@ public class UserHomepage extends javax.swing.JFrame {
     private javax.swing.JMenuItem DeleteAccount_Item;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu jMenuEdit_Profile;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JComboBox<String> vaccinationCenterDropdown;
     private javax.swing.JLabel vaccinationCenterLabel;
