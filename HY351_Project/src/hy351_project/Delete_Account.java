@@ -5,6 +5,7 @@
  */
 package hy351_project;
 
+import Utilities.RB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -128,8 +129,38 @@ public class Delete_Account extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Cancel_ButtonActionPerformed
 
+    
+    
+    /*Function to delete Account of Citizen behind the confirm button*/
     private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
         
+        String amka = AMKA_textfield.getText();
+        String password = Password_textfield.getText();
+       
+        System.out.println("amka is: "+ amka + " and password is: "+ password);
+        
+        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
+        
+        if(yes_no == JOptionPane.YES_OPTION){
+            
+            if(amka == null || password == null){
+                JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
+            }
+            else{
+               
+               if(RB.check_delete(amka, password) == true){
+                   JOptionPane.showMessageDialog(null, "The user deleted successfully!");
+               }
+               else if(RB.check_delete(amka, password) == false){
+                   JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
+               }
+            }
+        }
+        else{
+            
+        }
+        
+        /*
         String amka = AMKA_textfield.getText();
         String password = Password_textfield.getText();
         int Dose = 0;
@@ -176,7 +207,7 @@ public class Delete_Account extends javax.swing.JFrame {
         }
         } else{
            
-        }
+        }*/
         
     }//GEN-LAST:event_Confirm_ButtonActionPerformed
 

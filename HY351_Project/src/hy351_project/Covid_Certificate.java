@@ -5,6 +5,7 @@
  */
 package hy351_project;
 
+import Utilities.RB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -22,6 +23,7 @@ public class Covid_Certificate extends javax.swing.JFrame {
      */
     public Covid_Certificate() {
         initComponents();
+        
         
         String amka = Covid_Certificate_Apply.AMKA_for_certificate_textfield.getText();
         System.out.println("amka isss:   "+amka);
@@ -60,7 +62,7 @@ public class Covid_Certificate extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later!");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later");
+            JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later!");
             System.err.println("Got an exception!");
         }
     }
