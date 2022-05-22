@@ -5,6 +5,12 @@
  */
 package hy351_project;
 
+import Utilities.RB;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
@@ -76,6 +82,11 @@ public class Delete_Account extends javax.swing.JFrame {
         Confirm_Button.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         Confirm_Button.setForeground(new java.awt.Color(255, 0, 0));
         Confirm_Button.setText("Confirm");
+        Confirm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_ButtonActionPerformed(evt);
+            }
+        });
         jPanel1.add(Confirm_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 130, 40));
 
         Cancel_Button.setBackground(new java.awt.Color(153, 153, 153));
@@ -108,9 +119,97 @@ public class Delete_Account extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cancel_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_ButtonActionPerformed
-        
+
         this.setVisible(false);
+        UserHomepage TH = new UserHomepage();
+        TH.setVisible(true);
+        TH.pack();
+        TH.setTitle("HappyVax Homepage");
+        TH.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_Cancel_ButtonActionPerformed
+
+    
+    
+    /*Function to delete Account of Citizen behind the confirm button*/
+    private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
+        
+        String amka = AMKA_textfield.getText();
+        String password = Password_textfield.getText();
+       
+        System.out.println("amka is: "+ amka + " and password is: "+ password);
+        
+        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
+        
+        if(yes_no == JOptionPane.YES_OPTION){
+            
+            if(amka == null || password == null){
+                JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
+            }
+            else{
+               
+               if(RB.check_delete(amka, password) == true){
+                   JOptionPane.showMessageDialog(null, "The user deleted successfully!");
+               }
+               else if(RB.check_delete(amka, password) == false){
+                   JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
+               }
+            }
+        }
+        else{
+            
+        }
+        
+        /*
+        String amka = AMKA_textfield.getText();
+        String password = Password_textfield.getText();
+        int Dose = 0;
+        System.out.println("amka is: "+ amka + " and password is: "+ password);
+        
+        
+        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
+        
+        if(yes_no == JOptionPane.YES_OPTION){
+            
+        
+        if(amka == null || password == null){
+            JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
+        }
+        else{
+            try {
+                Connection con = MyConnection.getConnection();
+                Statement stmt = con.createStatement();
+                ResultSet rs;
+            
+                rs = stmt.executeQuery("SELECT * FROM citizen WHERE Citizen_AMKA = '" + amka + "' AND password = '" + password + "' AND Num_Of_Dose = '" + Dose + "'");
+            
+                if(rs.next()){
+                    String deleteQuery = "DELETE FROM citizen WHERE Citizen_AMKA = '" + amka +"'";
+                    stmt.executeUpdate(deleteQuery);
+                    stmt.close();
+                    con.close();
+                    JOptionPane.showMessageDialog(null, "The user deleted successfully!");
+                    this.setVisible(false);
+                    Homepage TH = new Homepage();
+                    TH.setVisible(true);
+                    TH.pack();
+                    TH.setTitle("HappyVax Start Page");
+                    TH.setLocationRelativeTo(null);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
+                }
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "The user can not be deleted!\nTry again Later!");
+                System.err.println("Got an exception!");
+            }    
+        }
+        } else{
+           
+        }*/
+        
+    }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,7 +218,7 @@ public class Delete_Account extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
