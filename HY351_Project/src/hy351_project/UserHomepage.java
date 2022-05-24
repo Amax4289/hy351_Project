@@ -60,6 +60,7 @@ public class UserHomepage extends javax.swing.JFrame {
         amkaTextfield = new javax.swing.JTextField();
         vaccinationCenterLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenuEdit_Profile = new javax.swing.JMenu();
         DeleteAccount_Item = new javax.swing.JMenuItem();
@@ -190,15 +191,23 @@ public class UserHomepage extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/got-my-covid-19-vaccine-feeling-great-meme.jpg"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(jLabel2)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("My Appointments", jPanel1);
@@ -271,6 +280,11 @@ public class UserHomepage extends javax.swing.JFrame {
 
         Cancel_Appointment_Item.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Cancel_Appointment_Item.setText("Cancel Appointment");
+        Cancel_Appointment_Item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cancel_Appointment_ItemActionPerformed(evt);
+            }
+        });
         jMenu2.add(Cancel_Appointment_Item);
 
         jMenuBar2.add(jMenu2);
@@ -285,7 +299,9 @@ public class UserHomepage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 462, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -409,6 +425,18 @@ public class UserHomepage extends javax.swing.JFrame {
         EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_Edit_Appointment_ItemActionPerformed
 
+    private void Cancel_Appointment_ItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cancel_Appointment_ItemActionPerformed
+
+        this.setVisible(false);
+        Cancel_Appointment CP = new Cancel_Appointment();
+        CP.setVisible(true);
+        CP.pack();
+        CP.setTitle("Cancel your Appointment");
+        CP.setLocationRelativeTo(null);
+        CP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+    }//GEN-LAST:event_Cancel_Appointment_ItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -455,6 +483,7 @@ public class UserHomepage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> dayDropdown;
     private javax.swing.JComboBox<String> doseDropdown;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

@@ -5,6 +5,7 @@
  */
 package Utilities;
 
+import hy351_project.MyConnection;
 import static hy351_project.MyConnection.getConnection;
 import java.util.List;
 import java.sql.Connection;
@@ -175,6 +176,37 @@ public class Amax {
         stmt.close();
         con.close();
         return true;
+    }
+
+    public static String cancel_Appointment(String AMKA, String Dose) throws SQLException {
+
+        Connection con = MyConnection.getConnection();
+        Statement stmt = con.createStatement();
+
+        String ID = "";
+
+        StringBuilder insQuery = new StringBuilder();
+        insQuery.append("SELECT Appointment_ID FROM appointment WHERE Citizen_AMKA = '")
+                .append(AMKA)
+                .append("' AND Dose = '")
+                .append(Dose)
+                .append("'");
+
+        stmt.executeQuery(insQuery.toString());
+        ResultSet res = stmt.getResultSet();
+
+        if (res.next() == true) {
+
+            ID = res.getString("Appointment_ID");
+
+            StringBuilder delQuery = new StringBuilder();
+            delQuery.append("DELETE FROM appointment WHERE Appointment_ID = '").append(ID).append("'");
+            stmt.execute(delQuery.toString());
+
+        }
+
+        //DELETE FROM products WHERE product_id=1;
+        return ID;
     }
 
 }

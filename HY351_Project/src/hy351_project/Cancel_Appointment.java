@@ -5,6 +5,13 @@
  */
 package hy351_project;
 
+import static Utilities.Amax.cancel_Appointment;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Amax
@@ -108,50 +115,24 @@ public class Cancel_Appointment extends javax.swing.JFrame {
 
     private void jButtonCancel_AppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancel_AppointmentActionPerformed
 
-        if (vaccinationCenterDropdown.getSelectedIndex() == 0
-                || vaccineNameDropdown.getSelectedIndex() == 0
-                || doseDropdown.getSelectedIndex() == 0
-                || dayDropdown.getSelectedIndex() == 0
-                || monthDropdown.getSelectedIndex() == 0
-                || yearDropdown.getSelectedIndex() == 0
-                || timeDropdown.getSelectedIndex() == 0
-                || amkaTextfield.getText().equals("")) {
-
+        if (doseDropdown.getSelectedIndex() == 0 || amkaTextfield.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Some fields are empty.\nCouldn't Cancel Appointment.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-        String vaccinationCenter = vaccinationCenterDropdown.getSelectedItem().toString();
-        String vaccineName = vaccineNameDropdown.getSelectedItem().toString();
-        String dose = doseDropdown.getSelectedItem().toString();
-        int day = dayDropdown.getSelectedIndex();
-        int month = monthDropdown.getSelectedIndex();
-        String year = yearDropdown.getSelectedItem().toString();
         String amka = amkaTextfield.getText();
-        String time = timeDropdown.getSelectedItem().toString();
-        String date = Integer.toString(day) + "/" + Integer.toString(month) + "/" + year;
-        System.out.println(vaccinationCenter);
+        String dose = doseDropdown.getSelectedItem().toString();
+
         try {
-            Connection con = MyConnection.getConnection();
-            Statement stmt = con.createStatement();
-            ResultSet rs;
-
-            rs = stmt.executeQuery("SELECT * FROM appointment WHERE Citizen_AMKA = '" + amka + "' AND Dose = '" + dose + "'");
-
-            if (rs.next()) {
-
-                String update = "UPDATE appointment SET Vaccination_Center_ID='" + vaccinationCenter + "',Vaccine_Name='" + vaccineName
-                        + "',Dose='" + dose + "',Date='" + date + "',Time='" + time + "' WHERE Citizen_AMKA = '" + amka + "'";
-
-                stmt.executeUpdate(update);
-                stmt.close();
-                con.close();
-                JOptionPane.showMessageDialog(null, "Τhe user's appointment with AMKA " + amka + "\nwas successfully Edited!");
+            String Appointment_ID = cancel_Appointment(amka, dose);
+            if (Appointment_ID != "") {
+                JOptionPane.showMessageDialog(null, "Appointment with ID " + Appointment_ID + " is canceled");
             } else {
-                JOptionPane.showMessageDialog(null, "The user does not have any active appointment, or wrong details!");
+                JOptionPane.showMessageDialog(null, "Cannot cancel Appointment.\n Make sure your AMKA or dose No. is correct.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
 
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "You don't have such an appointment", "Error", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Cancel_Appointment.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButtonCancel_AppointmentActionPerformed
 
     private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
