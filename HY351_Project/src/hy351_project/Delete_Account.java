@@ -9,6 +9,7 @@ import Utilities.RB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,7 +43,7 @@ public class Delete_Account extends javax.swing.JFrame {
         Password_textfield = new javax.swing.JPasswordField();
         Confirm_Button = new javax.swing.JButton();
         Cancel_Button = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
+        Back_Button = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -100,9 +101,13 @@ public class Delete_Account extends javax.swing.JFrame {
         });
         jPanel1.add(Cancel_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 130, 40));
 
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 300, 50));
+        Back_Button.setText("Back");
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,6 +216,16 @@ public class Delete_Account extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        this.setVisible(false);
+        UserHomepage EP = new UserHomepage();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("User Homepage");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_Back_ButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -248,6 +263,7 @@ public class Delete_Account extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AMKA_textfield;
+    private javax.swing.JButton Back_Button;
     private javax.swing.JButton Cancel_Button;
     private javax.swing.JButton Confirm_Button;
     private javax.swing.JPasswordField Password_textfield;
@@ -256,6 +272,5 @@ public class Delete_Account extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

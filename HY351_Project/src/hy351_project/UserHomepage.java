@@ -40,6 +40,7 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         vaccinationCenterDropdown = new javax.swing.JComboBox<>();
@@ -65,6 +66,8 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         Covid_Certificate = new javax.swing.JMenu();
         Apply_for_certificate = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        Edit_Appointment_Item = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -75,6 +78,8 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         jLabel1.setText("jLabel1");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -250,6 +255,20 @@ public class UserHomepage extends javax.swing.JFrame {
 
         jMenuBar2.add(Covid_Certificate);
 
+        jMenu2.setText("Appointments");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+
+        Edit_Appointment_Item.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Edit_Appointment_Item.setText("Edit Appointment");
+        Edit_Appointment_Item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Edit_Appointment_ItemActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Edit_Appointment_Item);
+
+        jMenuBar2.add(jMenu2);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,18 +306,6 @@ public class UserHomepage extends javax.swing.JFrame {
         DA.setTitle("Covid-19 Certificate Application");
         DA.setLocationRelativeTo(null);
     }//GEN-LAST:event_Apply_for_certificateActionPerformed
-
-    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-
-        this.setVisible(false);
-        Edit_Profile EP = new Edit_Profile();
-        EP.setVisible(true);
-        EP.pack();
-        EP.setTitle("User Profile");
-        EP.setLocationRelativeTo(null);
-        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     private void vaccinationCenterDropdownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vaccinationCenterDropdownActionPerformed
         // TODO add your handling code here:
@@ -338,7 +345,7 @@ public class UserHomepage extends javax.swing.JFrame {
                 || yearDropdown.getSelectedIndex() == 0
                 || timeDropdown.getSelectedIndex() == 0
                 || amkaTextfield.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "You have to fill all the required fields in order to book your appointment!");
+            
         }
 
         String vaccinationCenter = vaccinationCenterDropdown.getSelectedItem().toString();
@@ -374,6 +381,28 @@ public class UserHomepage extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_bookAppButtonActionPerformed
+
+    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+
+        this.setVisible(false);
+        Edit_Profile EP = new Edit_Profile();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("User Profile");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+    private void Edit_Appointment_ItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Edit_Appointment_ItemActionPerformed
+       
+        this.setVisible(false);
+        Edit_Appointment EP = new Edit_Appointment();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("Edit an Appointment");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_Edit_Appointment_ItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -414,18 +443,21 @@ public class UserHomepage extends javax.swing.JFrame {
     private javax.swing.JMenuItem Apply_for_certificate;
     private javax.swing.JMenu Covid_Certificate;
     private javax.swing.JMenuItem DeleteAccount_Item;
+    private javax.swing.JMenuItem Edit_Appointment_Item;
     private javax.swing.JTextField amkaTextfield;
     private javax.swing.JButton bookAppButton;
     private javax.swing.JComboBox<String> dayDropdown;
     private javax.swing.JComboBox<String> doseDropdown;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenu jMenuEdit_Profile;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;

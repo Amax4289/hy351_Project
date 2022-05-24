@@ -5,6 +5,7 @@
  */
 package hy351_project;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,6 +39,7 @@ public class Confirm_Password_Step extends javax.swing.JFrame {
         ms_textfield = new javax.swing.JPasswordField();
         Cancel_Button = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Back_Button = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,6 +105,14 @@ public class Confirm_Password_Step extends javax.swing.JFrame {
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 110, 30));
 
+        Back_Button.setText("Back");
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -153,6 +163,16 @@ public class Confirm_Password_Step extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        this.setVisible(false);
+        UserHomepage EP = new UserHomepage();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle(" Homepage");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_Back_ButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -189,6 +209,7 @@ public class Confirm_Password_Step extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back_Button;
     private javax.swing.JButton Cancel_Button;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

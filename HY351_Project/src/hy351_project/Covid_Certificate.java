@@ -9,6 +9,7 @@ import Utilities.RB;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
@@ -92,6 +93,7 @@ public class Covid_Certificate extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        Back_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -182,6 +184,14 @@ public class Covid_Certificate extends javax.swing.JFrame {
         jLabel11.setText("Dose :");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 60, 36));
 
+        Back_Button.setText("Back");
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,6 +205,16 @@ public class Covid_Certificate extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        this.setVisible(false);
+        UserHomepage EP = new UserHomepage();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("User Homepage");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_Back_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,6 +253,7 @@ public class Covid_Certificate extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AMKA_textfield;
+    private javax.swing.JButton Back_Button;
     private javax.swing.JTextField dose_textfield;
     private javax.swing.JTextField fullname_textfield;
     private javax.swing.JLabel jLabel1;

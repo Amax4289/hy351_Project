@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JFrame;
 
 /**
  *
@@ -40,6 +41,7 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
         vaccine_company_textbox = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Back_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +99,14 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
         jButton2.setForeground(new java.awt.Color(0, 0, 0));
         jButton2.setText("Clear");
         jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 140, 40));
+
+        Back_Button.setText("Back");
+        Back_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_ButtonActionPerformed(evt);
+            }
+        });
+        jPanel4.add(Back_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,6 +178,16 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed
+        this.setVisible(false);
+        UserHomepage EP = new UserHomepage();
+        EP.setVisible(true);
+        EP.pack();
+        EP.setTitle("User Homepage");
+        EP.setLocationRelativeTo(null);
+        EP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_Back_ButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -205,6 +225,7 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField AMKA_for_certificate_textfield;
+    private javax.swing.JButton Back_Button;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel3;
