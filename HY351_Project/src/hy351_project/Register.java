@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Amax
  */
 public class Register extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Register
      */
