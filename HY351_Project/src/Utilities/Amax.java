@@ -69,14 +69,13 @@ public class Amax {
 
             StringBuilder insQuery = new StringBuilder();
 
-            insQuery.append("INSERT INTO citizen (Citizen_ID, Citizen_AMKA, Sex, Birthdate, Phone, Email, Type, Num_Of_Dose, password, username, Firstname, Lastname) VALUES (")
+            insQuery.append("INSERT INTO citizen (Citizen_ID, Citizen_AMKA, Sex, Birthdate, Phone, Email, Num_Of_Dose, password, username, Firstname, Lastname) VALUES (")
                     .append("'").append(Citizen_ID).append("', ")
                     .append("'").append(AMKA).append("', ")
                     .append("'").append(Sex).append("', ")
                     .append("'").append(Birthdate).append("', ")
                     .append("'").append(Telephone).append("', ")
                     .append("'").append(Email).append("', ")
-                    .append("'").append("Citizen").append("', ")
                     .append("'").append("0").append("', ")
                     .append("'").append(Password).append("', ")
                     .append("'").append(Username).append("', ")

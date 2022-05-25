@@ -6,9 +6,6 @@
 package hy351_project;
 
 import Utilities.RB;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -131,52 +128,53 @@ public class Delete_Account extends javax.swing.JFrame {
         TH.pack();
         TH.setTitle("HappyVax Homepage");
         TH.setLocationRelativeTo(null);
-        
+
     }//GEN-LAST:event_Cancel_ButtonActionPerformed
 
-    
-    
     /*Function to delete Account of Citizen behind the confirm button*/
     private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
-        
+
         String amka = AMKA_textfield.getText();
         String password = Password_textfield.getText();
-       
-        System.out.println("amka is: "+ amka + " and password is: "+ password);
-        
-        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
-        
-        if(yes_no == JOptionPane.YES_OPTION){
-            
-            if(amka == null || password == null){
+
+        System.out.println("amka is: " + amka + " and password is: " + password);
+
+        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?", "Confirmation Message", JOptionPane.YES_NO_OPTION, 2);
+
+        if (yes_no == JOptionPane.YES_OPTION) {
+
+            if (amka == null || password == null) {
                 JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
+            } else {
+
+                if (RB.check_delete(amka, password) == true) {
+                    JOptionPane.showMessageDialog(null, "The user deleted successfully!");
+                    this.setVisible(false);
+                    Homepage TH = new Homepage();
+                    TH.setVisible(true);
+                    TH.pack();
+                    TH.setTitle("HappyVax Start Page");
+                    TH.setLocationRelativeTo(null);
+                } else if (RB.check_delete(amka, password) == false) {
+                    JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
+                }
             }
-            else{
-               
-               if(RB.check_delete(amka, password) == true){
-                   JOptionPane.showMessageDialog(null, "The user deleted successfully!");
-               }
-               else if(RB.check_delete(amka, password) == false){
-                   JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
-               }
-            }
+        } else {
+
         }
-        else{
-            
-        }
-        
+
         /*
         String amka = AMKA_textfield.getText();
         String password = Password_textfield.getText();
         int Dose = 0;
         System.out.println("amka is: "+ amka + " and password is: "+ password);
-        
-        
+
+
         int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete your account?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
-        
+
         if(yes_no == JOptionPane.YES_OPTION){
-            
-        
+
+
         if(amka == null || password == null){
             JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
         }
@@ -185,9 +183,9 @@ public class Delete_Account extends javax.swing.JFrame {
                 Connection con = MyConnection.getConnection();
                 Statement stmt = con.createStatement();
                 ResultSet rs;
-            
+
                 rs = stmt.executeQuery("SELECT * FROM citizen WHERE Citizen_AMKA = '" + amka + "' AND password = '" + password + "' AND Num_Of_Dose = '" + Dose + "'");
-            
+
                 if(rs.next()){
                     String deleteQuery = "DELETE FROM citizen WHERE Citizen_AMKA = '" + amka +"'";
                     stmt.executeUpdate(deleteQuery);
@@ -204,16 +202,15 @@ public class Delete_Account extends javax.swing.JFrame {
                 else{
                     JOptionPane.showMessageDialog(null, "The user can not be deleted because he already has an active dose of vaccine!");
                 }
-            } 
+            }
             catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "The user can not be deleted!\nTry again Later!");
                 System.err.println("Got an exception!");
-            }    
+            }
         }
         } else{
-           
+
         }*/
-        
     }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
     private void Back_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_ButtonActionPerformed

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2022 at 09:33 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.9
+-- Generation Time: May 25, 2022 at 12:55 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,16 +34,17 @@ CREATE TABLE `appointment` (
   `Citizen_AMKA` bigint(11) NOT NULL,
   `Dose` int(1) NOT NULL,
   `Date` varchar(25) NOT NULL,
-  `Time` varchar(10) NOT NULL
+  `Time` varchar(10) NOT NULL,
+  `Confirmed` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `appointment`
 --
 
-INSERT INTO `appointment` (`Appointment_ID`, `Vaccination_Center_ID`, `Vaccine_Name`, `Citizen_AMKA`, `Dose`, `Date`, `Time`) VALUES
-(1, 'PAGNI Hospital', 'Moderna', 77777777777, 1, '15/05/2022', '13:00'),
-(2, 'PAGNI Hospital', 'Moderna', 77777777777, 2, '30/05/2022', '11:00');
+INSERT INTO `appointment` (`Appointment_ID`, `Vaccination_Center_ID`, `Vaccine_Name`, `Citizen_AMKA`, `Dose`, `Date`, `Time`, `Confirmed`) VALUES
+(1, 'PAGNI Hospital', 'Moderna', 77777777777, 2, '15/05/2022', '13:00', 1),
+(9, 'Venizeleio Hospital', 'Moderna', 1111111111, 1, '3/3/2027', '10:30', 0);
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,6 @@ CREATE TABLE `citizen` (
   `Birthdate` date NOT NULL,
   `Phone` int(15) NOT NULL,
   `Email` varchar(70) NOT NULL,
-  `Type` varchar(30) NOT NULL,
   `Num_Of_Dose` int(11) NOT NULL,
   `password` text NOT NULL,
   `username` varchar(30) NOT NULL,
@@ -70,10 +70,10 @@ CREATE TABLE `citizen` (
 -- Dumping data for table `citizen`
 --
 
-INSERT INTO `citizen` (`Citizen_ID`, `Citizen_AMKA`, `Sex`, `Birthdate`, `Phone`, `Email`, `Type`, `Num_Of_Dose`, `password`, `username`, `Firstname`, `Lastname`) VALUES
-(5, 55555555555, 'Female', '1995-11-10', 99555555, 'papagalos@gmail.com', 'Citizen', 0, '123', 'papagalos', 'Dimitris', 'stoichkov'),
-(6, 66666666666, 'Female', '1995-09-11', 99555555, 'lemonakis@hotmail.com', 'Citizen', 0, '123', 'lemon', 'Giorgos', 'Lemonis'),
-(7, 77777777777, 'Female', '1995-09-22', 99555555, 'kafedaki@hotmail.com', 'Citizen', 0, '123', 'coffee', 'Maria', 'Kafedaki');
+INSERT INTO `citizen` (`Citizen_ID`, `Citizen_AMKA`, `Sex`, `Birthdate`, `Phone`, `Email`, `Num_Of_Dose`, `password`, `username`, `Firstname`, `Lastname`) VALUES
+(5, 55555555555, 'Female', '1995-11-10', 99555555, 'papagalos@gmail.com', 0, '123', 'papagalos', 'Dimitris', 'stoichkov'),
+(7, 77777777777, 'Female', '1995-09-22', 99555555, 'kafedaki@hotmail.com', 2, '123', 'coffee', 'Maria', 'Kafedaki'),
+(8, 42042042042, 'Female', '1821-03-25', 696969696, 'kokosaskis@hashish.com', 1, '123', 'kokosaskis', 'kokas', 'kokakias');
 
 -- --------------------------------------------------------
 
@@ -134,37 +134,22 @@ INSERT INTO `nurse` (`Nurse_ID`, `Nurse_AMKA`, `Sex`, `Birthdate`, `Phone`, `Ema
 -- --------------------------------------------------------
 
 --
--- Table structure for table `symptoms`
---
-
-CREATE TABLE `symptoms` (
-  `Symptoms_ID` int(11) NOT NULL,
-  `Appointment_ID` int(11) NOT NULL,
-  `Citizen_AMKA` int(11) NOT NULL,
-  `Vaccine_Name` varchar(30) NOT NULL,
-  `Dose` int(1) NOT NULL,
-  `Date` date NOT NULL,
-  `Comments` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vaccination_center`
 --
 
 CREATE TABLE `vaccination_center` (
   `Vaccination_Center_ID` varchar(30) NOT NULL,
-  `Address` varchar(40) NOT NULL
+  `Address` varchar(40) NOT NULL,
+  `City` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `vaccination_center`
 --
 
-INSERT INTO `vaccination_center` (`Vaccination_Center_ID`, `Address`) VALUES
-('PAGNI Hospital', 'Πανεπιστημίου, Ηράκλειο 71500'),
-('Venizeleio Hospital', 'Λεωφ. Κνωσού 44, Ηράκλειο 71409');
+INSERT INTO `vaccination_center` (`Vaccination_Center_ID`, `Address`, `City`) VALUES
+('PAGNI Hospital', 'Πανεπιστημίου, Ηράκλειο 71500', 'Heraklion'),
+('Venizeleio Hospital', 'Λεωφ. Κνωσού 44, Ηράκλειο 71409', 'Heraklion');
 
 -- --------------------------------------------------------
 
@@ -215,12 +200,6 @@ ALTER TABLE `nurse`
   ADD PRIMARY KEY (`Nurse_ID`,`Nurse_AMKA`);
 
 --
--- Indexes for table `symptoms`
---
-ALTER TABLE `symptoms`
-  ADD PRIMARY KEY (`Appointment_ID`,`Citizen_AMKA`);
-
---
 -- Indexes for table `vaccination_center`
 --
 ALTER TABLE `vaccination_center`
@@ -240,7 +219,7 @@ ALTER TABLE `vaccine`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `Appointment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Appointment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `citizen`
