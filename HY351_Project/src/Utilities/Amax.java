@@ -190,7 +190,7 @@ public class Amax {
                 .append(AMKA)
                 .append("' AND Dose = '")
                 .append(Dose)
-                .append("'");
+                .append("' AND Confirmed = 0");
 
         stmt.executeQuery(insQuery.toString());
         ResultSet res = stmt.getResultSet();
@@ -205,7 +205,6 @@ public class Amax {
 
         }
 
-        //DELETE FROM products WHERE product_id=1;
         return ID;
     }
 

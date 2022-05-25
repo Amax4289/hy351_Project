@@ -65,6 +65,7 @@ public class UserHomepage extends javax.swing.JFrame {
         jMenuEdit_Profile = new javax.swing.JMenu();
         DeleteAccount_Item = new javax.swing.JMenuItem();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        sign_out_item = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         Covid_Certificate = new javax.swing.JMenu();
         Apply_for_certificate = new javax.swing.JMenuItem();
@@ -238,6 +239,15 @@ public class UserHomepage extends javax.swing.JFrame {
         });
         jMenuEdit_Profile.add(jRadioButtonMenuItem1);
 
+        sign_out_item.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        sign_out_item.setText("Sign out");
+        sign_out_item.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sign_out_itemActionPerformed(evt);
+            }
+        });
+        jMenuEdit_Profile.add(sign_out_item);
+
         jMenuBar2.add(jMenuEdit_Profile);
 
         jMenu3.setText("   ");
@@ -385,7 +395,7 @@ public class UserHomepage extends javax.swing.JFrame {
 
         try {
 
-            ps = con.prepareStatement("INSERT INTO appointment(Vaccination_Center_ID,Vaccine_Name,Citizen_AMKA,Dose,Date,Time) VALUES (?,?,?,?,?,?)");
+            ps = con.prepareStatement("INSERT INTO appointment(Vaccination_Center_ID,Vaccine_Name,Citizen_AMKA,Dose,Date,Time,Confirmed) VALUES (?,?,?,?,?,?,?)");
 
             ps.setString(1, vaccinationCenter);
             ps.setString(2, vaccineName);
@@ -393,6 +403,7 @@ public class UserHomepage extends javax.swing.JFrame {
             ps.setString(4, dose);
             ps.setString(5, Integer.toString(day) + "/" + Integer.toString(month) + "/" + year);
             ps.setString(6, time);
+            ps.setString(7, "0");
 
             if (ps.executeUpdate() > 0) {
                 JOptionPane.showMessageDialog(null, "Appointment Booked Succesfuly!");
@@ -436,6 +447,17 @@ public class UserHomepage extends javax.swing.JFrame {
         CP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
     }//GEN-LAST:event_Cancel_Appointment_ItemActionPerformed
+
+    private void sign_out_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sign_out_itemActionPerformed
+
+        this.setVisible(false);
+        Homepage CP = new Homepage();
+        CP.setVisible(true);
+        CP.pack();
+        CP.setTitle("Homepage");
+        CP.setLocationRelativeTo(null);
+        CP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_sign_out_itemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -498,6 +520,7 @@ public class UserHomepage extends javax.swing.JFrame {
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JComboBox<String> monthDropdown;
+    private javax.swing.JMenuItem sign_out_item;
     private javax.swing.JComboBox<String> timeDropdown;
     private javax.swing.JComboBox<String> vaccinationCenterDropdown;
     private javax.swing.JLabel vaccinationCenterLabel;

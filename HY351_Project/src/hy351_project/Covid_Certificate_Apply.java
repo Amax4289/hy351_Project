@@ -138,41 +138,38 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String amka = AMKA_for_certificate_textfield.getText();
-        System.out.println("amka is: "+ amka);
+        System.out.println("amka is: " + amka);
         int Dose = 2;
 
-        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to apply for Covid-19 Certificate?","Confirmation Message",JOptionPane.YES_NO_OPTION,2);
+        int yes_no = JOptionPane.showConfirmDialog(null, "Are you sure you want to apply for Covid-19 Certificate?", "Confirmation Message", JOptionPane.YES_NO_OPTION, 2);
 
-        if(yes_no == JOptionPane.YES_OPTION){
+        if (yes_no == JOptionPane.YES_OPTION) {
 
-            if(amka == null){
+            if (amka == null) {
                 JOptionPane.showMessageDialog(null, "One Or More Empty Field!");
-            }
-            else{
+            } else {
                 try {
                     Connection con = MyConnection.getConnection();
                     Statement stmt = con.createStatement();
                     ResultSet rs;
 
-                    rs = stmt.executeQuery("SELECT * FROM appointment WHERE Citizen_AMKA = '" + amka + "' AND Dose = '" + Dose + "'");
+                    rs = stmt.executeQuery("SELECT * FROM appointment WHERE Citizen_AMKA = '" + amka + "' AND Dose = '" + Dose + "' AND Confirmed = 1");
 
-                    if(rs.next()){
+                    if (rs.next()) {
                         Covid_Certificate CC = new Covid_Certificate();
                         CC.setVisible(true);
                         CC.pack();
                         CC.setTitle("Covid-19 Certification");
                         CC.setLocationRelativeTo(null);
-                    }
-                    else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Τhere is no active vaccination or has not completed 2 vaccination doses");
                     }
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Τhe certificate was not found try again later");
                     System.err.println("Got an exception!");
                 }
             }
-        } else{
+        } else {
 
         }
 
@@ -195,7 +192,7 @@ public class Covid_Certificate_Apply extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

@@ -126,7 +126,7 @@ public class Cancel_Appointment extends javax.swing.JFrame {
             if (Appointment_ID != "") {
                 JOptionPane.showMessageDialog(null, "Appointment with ID " + Appointment_ID + " is canceled");
             } else {
-                JOptionPane.showMessageDialog(null, "Cannot cancel Appointment.\n Make sure your AMKA or dose No. is correct.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Cannot cancel Appointment.\n You are already vaccinated.\n or make sure your AMKA or dose No. is correct.", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         } catch (SQLException ex) {
